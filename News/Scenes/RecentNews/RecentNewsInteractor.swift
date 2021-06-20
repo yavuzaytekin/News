@@ -30,7 +30,7 @@ class RecentNewsInteractor: RecentNewsBusinessLogic, RecentNewsDataStore {
     var totalResults = -1
 
     func fetchRecentNews(request: RecentNews.Fetch.Request) {
-//        guard totalResults != news.count else { return }
+        guard totalResults != news.count else { return }
         let favouriteNewsTitles = worker.getFavouriteNews()
         worker.getRecentNews(source: selectedSource!.id, page: page) { result in
             switch result {
